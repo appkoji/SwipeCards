@@ -35,16 +35,6 @@
 			path = SwipeCards;
 			sourceTree = "<group>";
 		};
-		1C4A1EE82D36A2290072BBBA /* SwipeCardsTests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SwipeCardsTests;
-			sourceTree = "<group>";
-		};
-		1C4A1EF22D36A2290072BBBA /* SwipeCardsUITests */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = SwipeCardsUITests;
-			sourceTree = "<group>";
-		};
 /* End PBXFileSystemSynchronizedRootGroup section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -76,8 +66,6 @@
 			isa = PBXGroup;
 			children = (
 				1C4A1ED72D36A2270072BBBA /* SwipeCards */,
-				1C4A1EE82D36A2290072BBBA /* SwipeCardsTests */,
-				1C4A1EF22D36A2290072BBBA /* SwipeCardsUITests */,
 				1C4A1ED62D36A2270072BBBA /* Products */,
 			);
 			sourceTree = "<group>";
@@ -130,9 +118,6 @@
 			dependencies = (
 				1C4A1EE72D36A2290072BBBA /* PBXTargetDependency */,
 			);
-			fileSystemSynchronizedGroups = (
-				1C4A1EE82D36A2290072BBBA /* SwipeCardsTests */,
-			);
 			name = SwipeCardsTests;
 			packageProductDependencies = (
 			);
@@ -152,9 +137,6 @@
 			);
 			dependencies = (
 				1C4A1EF12D36A2290072BBBA /* PBXTargetDependency */,
-			);
-			fileSystemSynchronizedGroups = (
-				1C4A1EF22D36A2290072BBBA /* SwipeCardsUITests */,
 			);
 			name = SwipeCardsUITests;
 			packageProductDependencies = (
@@ -404,6 +386,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -433,6 +416,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 17.6;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
