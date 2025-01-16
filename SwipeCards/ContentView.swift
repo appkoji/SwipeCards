@@ -16,11 +16,9 @@ struct WordCard: Identifiable {
 struct ContentView: View {
     
     var wordCards: [WordCard] = [
-            WordCard(word: "ちしき", answer: "Knowledge"),
             WordCard(word: "さいふ", answer: "Wallet"),
             WordCard(word: "やま", answer: "Mountain"),
             WordCard(word: "まなぶ", answer: "Learn"),
-            WordCard(word: "ことば", answer: "Word"),
             WordCard(word: "かお", answer: "Face"),
             
     ].reversed()
