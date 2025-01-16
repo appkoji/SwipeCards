@@ -18,7 +18,6 @@ struct ContentView: View {
     var wordCards: [WordCard] = [
             WordCard(word: "さいふ", answer: "Wallet"),
             WordCard(word: "やま", answer: "Mountain"),
-            WordCard(word: "まなぶ", answer: "Learn"),
             WordCard(word: "かお", answer: "Face"),
             
     ].reversed()
