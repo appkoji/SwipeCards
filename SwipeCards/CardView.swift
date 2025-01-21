@@ -10,54 +10,55 @@ import SwiftUI
 struct CardView: View {
     
     //var inputText: String
-    var inputWordCard: WordCard
+    var inputWordCard: Word
     
     
     private let cardHeight = UIScreen.screenHeight * 0.6
     private let cardWidth = UIScreen.screenWidth * 0.8
     
-    private let ble = Color(uiColor: UIColor(red: 0.0, green: 0.1, blue: 0.2, alpha: 1.0)) //カードの背景色（スワイプ時に変色するため）
+    private let cardGrayColor = Color(uiColor: UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0)) //カードの背景色（スワイプ時に変色するため）
     
     @State private var offset = CGSize.zero //カードの初期の位置（真ん中）
-    @State private var color: Color = Color(uiColor: UIColor(red: 0.0, green: 0.1, blue: 0.2, alpha: 1.0))
+    @State private var color: Color = Color(uiColor: UIColor(red: 0.2, green: 0.2, blue: 0.2, alpha: 1.0))
     @State private var isFlipped: Bool = false //
     @State private var backcardOpacity = 1.0
     
     var body: some View {
         
         ZStack {
+                        
             ZStack {
                 
                 // カードの下
                 ZStack {
-                    
                     // カードの形をした長方形を生成
                     Rectangle()
                         .frame(width: cardWidth, height: cardHeight)
                         .cornerRadius(45)
                         .foregroundStyle(.gray.opacity(backcardOpacity))
-                    
                 }
-                
+                                
                 // カードのウラを生成
                 ZStack {
-                    
                     // カードの形をした長方形を生成
                     Rectangle()
                         .frame(width: cardWidth, height: cardHeight)
                         .cornerRadius(45)
-                        .foregroundStyle(.white)
+                        .foregroundStyle(color)
                         .shadow(radius: 10.0)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 45)
+                                .stroke(.white, lineWidth: 5)
+                        }
                     VStack {
                         // 生成されたカードの裏に、テキスト（答え）を載せる
                         Text(self.inputWordCard.answer)
                             .font(.title2)
-                            .foregroundStyle(.black)
+                            .foregroundStyle(.white)
                             .bold()
                             .frame(width: cardWidth-20)
                             
                     }
-                    
                 }
                 .rotation3DEffect(
                     .degrees(isFlipped ? 0 : -90), axis: (x: 0.0, y: 1.0, z: 0.0)
@@ -73,6 +74,10 @@ struct CardView: View {
                         .cornerRadius(45)
                         .foregroundStyle(color)
                         .shadow(radius: 10.0)
+                        .overlay {
+                            RoundedRectangle(cornerRadius: 45)
+                                .stroke(.white, lineWidth: 5)
+                        }
                     VStack {
                         // 生成されたカードの上に、テキスト（質問）を載せる
                         Text(self.inputWordCard.word)
@@ -141,7 +146,7 @@ struct CardView: View {
         case 150...500:
             color = .gray
         default:
-            color = ble
+            color = cardGrayColor
         }
     }
     
@@ -156,5 +161,5 @@ extension UIScreen{
 
 
 #Preview {
-    CardView(inputWordCard: WordCard(word: "質問", answer: "答え"))
+    CardView(inputWordCard: Word(word: "質問", answer: "答え"))
 }

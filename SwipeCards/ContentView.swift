@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct WordCard: Identifiable {
+struct Word: Identifiable {
     var id = UUID()
     var word: String
     var answer: String
@@ -15,12 +15,13 @@ struct WordCard: Identifiable {
 
 struct ContentView: View {
     
-    var wordCards: [WordCard] = [
-            WordCard(word: "さいふ", answer: "Wallet"),
-            WordCard(word: "やま", answer: "Mountain"),
-            WordCard(word: "かお", answer: "Face"),
+    var words = [
+            Word(word: "りんご", answer: "Apple"),
+            Word(word: "ナシ", answer: "Pear"),
+            Word(word: "ザクロ", answer: "Pomegranate"),
             
     ].reversed()
+    
     
     
     var body: some View {
@@ -33,9 +34,10 @@ struct ContentView: View {
                     .foregroundStyle(.black)
                     .bold()
             }
-            ForEach(wordCards) { aCard in
+            ForEach(words) { aCard in
                 CardView(inputWordCard: aCard)
             }
+            
         }
     }
 }
